@@ -1,0 +1,547 @@
+<?php include 'include/header.php' ?>
+<div class="login-page static-page bbb_sign">
+	<div class="container">		
+		<div class="pre-signup talant">
+			<div class="row">
+				<div class="col-sm-12">
+				<div class="pre-left" >
+					<h2>Free Tenant Registration!</h2>
+					<ul>				
+						<li>Save Favorites Homes, Landlords and Search</li>
+						<li>Real-Time "New Home" Notifications</li>
+						<li>Move-In Specials and Lease Incentives</li>
+						<li>Landlords Contact You with Deals</li>
+					</ul>		
+				<h6 class="text-left"> What others are saying:</h6>
+				<p>
+		<i>		"I found a great house with a great landlord. your site makes it fun and very time wise to look for property that is up to standards, clean and worth considering. You weed out the slum lords. Great service and if i need to ever move like this again, I will be back. Thank you for all your help."</i></p>
+		<p>- Tenant	</p>
+				</div>
+				</div>
+				
+				</div>
+				<div class="row signup-form">
+					<form method="post" id="signup1_forms" onsubmit="return submit5();" action="process/process.php?action=tenantsignup" enctype="multipart/form-data">
+					<div class="col-sm-9">
+		<fieldset>
+			<legend><strong>Personal Information</strong></legend>
+
+<div class="row">
+	<div class="col-sm-6">
+		<div class="form-group">
+			<div class="tenentsignupMessages"></div>
+					  <input class="form-control input-md" name="id" id="id" type="hidden">
+			 <label class="col-sm-4 control-label">First Name</label>  
+			 <div class="col-sm-8">
+			 	<input class="form-control input-md" name="first_name" id="first_name" type="text" required>
+			 </div>
+		</div>
+	</div>
+	<div class="col-sm-6">
+		<div class="form-group">
+			  <label class="col-sm-4  control-label">Last Name</label> 
+			   <div class="col-sm-8">
+			   	<input class="form-control input-md" name="last_name" id="last_name" type="text" required> 
+			   </div>
+		</div>
+	</div>
+</div>
+<div class="row">
+		<div class="form-group">
+			  <label class="col-sm-3 control-label">Phone Number</label>  
+			   <div class="col-sm-6">
+			   	<input class="form-control input-md" title=" plz enter 10 digit mobile number" maxlength="10" minlength="10"  placeholder="(555)555-555" name="phone_number" id="phone_number" type="text" required >
+							
+
+			   <!--<input type= "text" name= "name" pattern= "[0-3]{3}" maxlength="3"  title= "Title"/>
+			   <input type= "text" name= "name" pattern= "[0-3]{3}" maxlength="3"  title= "Title"/>
+			   <input type= "text" name= "name" pattern= "[0-4]{4}" maxlength="4"  title= "Title"/>-->
+			   <span id="message"></span>
+			   </div>
+		</div>
+</div>
+<div class="row">
+	<div class="col-sm-6">
+		<div class="form-group">
+			<label class="col-sm-4 control-label">My voucher maximum</label> 
+			<div class="col-sm-8">
+				 <input class="form-control input-md" name="maximum_voucher" maxlength="5" id="number" type="text" required>
+			</div>
+		</div>
+	</div>
+	<div class="col-sm-6">
+		<div class="form-group">
+			 <label class="col-sm-4 control-label">My monthly rent portion</label>  
+			 <div class="col-sm-8">
+			 	 <input class="form-control input-md" name="portion" maxlength="5" id="numaric" type="text" required>
+			 </div>
+		</div>
+	</div>
+</div>	
+
+
+<div class="row">
+	<div class="form-group">
+			 <label class="col-sm-3 control-label">Total tenants of my voucher</label> 
+			<div class="col-sm-6">
+				 <select required="" id="inputs" name="tenants_my_voucher" class="form-control">
+								<option value="">Select</option>
+	                            <option value="1">1</option>
+	                            <option value="2">2</option>
+	                            <option value="3">3</option>
+	                            <option value="4">4</option>
+	                            <option value="5">5</option>
+	                            <option value="6">6</option>
+	                            <option value="6">7</option>
+								<option value="6">8</option>
+								<option value="6">9</option>
+							    <option value="6">10</option>
+							</select> 
+			</div>
+						
+		</div>
+</div>	
+<div class="row">
+		<div class="col-sm-12">
+			<div  id="tenent" >
+		
+</div>
+		</div>
+	</div>
+
+<div class="row">
+	<div class="form-group">
+			<label class="col-sm-3 control-label">My rental history</label>
+			<div class="col-sm-6">
+				<select required="" id="rental_history" name="rental_history" class="form-control">
+								<option value="">Select</option>
+	                            <option value="1">1</option>
+	                            <option value="2">2</option>
+	                            <option value="3">3</option>
+	                            <option value="4">4</option>
+	                            <option value="5">5</option>
+	                         
+							</select>
+			</div>
+		</div>
+
+</div>
+<div class="row">
+	<div class="col-sm-12">
+		<div  id="rentel">
+		
+
+
+
+
+
+
+						</div>
+	</div>
+
+</div>
+<div class="row">
+	<div class="col-sm-6">
+			<label class="control-label col-sm-4">I am looking for</label>
+			<div class="col-sm-8">
+				<div class="form-group">
+					<select required="" name="looking_for" class="form-control">
+								<option value="">Select</option>
+	                            <option value="1Bedroom">1Bedroom</option>
+	                            <option value="2Bedroom">2Bedroom</option>
+	                            <option value="3Bedroom">3Bedroom</option>
+	                            <option value="4Bedroom">4Bedroom</option>
+	                            <option value="5Bedroom">5Bedroom</option>
+	                            <option value="6Bedroom">6Bedroom</option>	                            
+							</select>
+				</div>
+<div class="form-group">
+						<?php
+
+                        $result=$db->select_state();						
+                     ?>
+	
+			<select required="" name="State" class="form-control"  onChange="getcity(this.value);">
+								<option value="">Select state</option>
+								<?php
+								while($row = mysqli_fetch_array($result))
+						       { ?>
+						<option value="<?php echo $row['State'];?>"><?php echo $row['StateName'];?></option>
+						<?php }?>					  
+							</select>
+					</div>
+					
+
+			</div>
+	</div>
+	<div class="col-sm-6">
+		
+			<label class="col-sm-4 control-label">Deposit</label>  
+			 <div class="col-sm-8">
+			 	<div class="form-group">
+			 	<select required="" name="Deposit" class="form-control">
+								<option value="">Select</option>
+	                            <option value="Optional">Optional</option>
+	                            <option value="2">I have no problem with deposit</option>
+	                            <option value="3">I want landlord work on with me the deposit</option>
+	                            <option value="4">my deposit paid by third party</option>                         
+							</select>
+							</div>
+						<div class="form-group">
+			<select  name="City" class="form-control" id="city-list">
+								<option value="">Select City</option>								
+						        </select> 
+		</div>			
+			 </div>
+		
+
+					
+	</div>
+</div>
+		</fieldset>				
+			
+	<fieldset>
+		<legend><strong>Additional Information</strong></legend>
+				
+<div class="row">
+	<div class="col-sm-12">
+		<div class="form-group">
+			<label class="control-label" for="radios">Voucher Status</label>
+			<div class="checkbox">
+						<label for="radios-0">
+						  <input name="voucher_status" id="radios-0" value="yes" type="checkbox">
+						 I Have a Voucher
+						</label>
+						</div>
+						  <p class="nomargin">Select "I have a Voucher" if you receive Government rent assistance.</p>
+		</div>
+	</div>
+	
+</div>
+									
+	
+<div class="row">
+	<div class="col-sm-6">
+		<div class="form-group">
+			 <label class="col-sm-4 control-label" for="radios">Move Date</label>
+			<div class="col-sm-8">
+				 <div class="input-group">
+					    <input value="" placeholder="E-mail address" name="move_date" class="required email form-control" id="move_date" type="date" required="">
+					    <span class="input-group-btn">
+						<a class="button btn btn-default">
+						<i class="fa fa-calendar"></i></a>
+					    </span>
+					</div>
+			</div>
+		</div>
+	</div>
+	<div class="col-sm-6">
+		<div class="form-group">
+			<div class="checkbox">
+						<label for="checkbox-1">
+						  <input name="voucher" class="ba" id="checkbox-1" value="yes" type="checkbox">
+						 as soon as possible
+						</label>
+						</div>
+		</div>
+	</div>
+</div>
+			
+	
+				
+	<div class="row">
+	<div class="col-sm-6">
+		<div class="form-group">
+			<label class="control-label">Do you have pets?</label>
+			<label class="radio-inline" for="Yes-0">
+								  <input name="pet_animal" id="Yes-0" value="yes"  type="radio">
+								  Yes
+								</label> 
+								<label class="radio-inline" for="No-1">
+								  <input name="pet_animal" id="No-1" value="no" type="radio" checked>
+								  No
+								</label>  
+		</div>
+	</div>
+	<div class="col-sm-6">
+		<div class="form-group">
+			 <label class="control-label">Accessibility Needs:</label> 
+			 <label class="radio-inline" for="Needs-0">
+								  <input name="accessbility_need" id="Needs-0" value="yes"  type="radio">
+								  Yes
+								</label> 
+								<label class="radio-inline" for="Needs-1">
+								  <input name="accessbility_need" id="Needs-1" value="no" type="radio" checked>
+								  No
+								</label> 
+		</div>
+	</div>
+</div>	
+</fieldset>
+
+	
+<fieldset>
+	<legend><strong>*description</strong></legend>
+	<div class="row">
+	<div class="col-sm-12">
+		<div class="signup-dec">
+			<div class="form-group">
+			 <label class="control-label">Note to landlord(500 Characters limit )</label>
+			 <br>
+			 <textarea class="form-control" rows="2" name="Note_to_landlord" maxlength="250" minlength="50" cols="50" style="height: 200px;" required></textarea>  
+		</div>
+		</div>
+		
+	</div>
+	
+</div>	
+</fieldset>
+
+<fieldset>
+	<legend>
+		<strong>*E-mail & Password</strong>
+	</legend>
+
+<div class="row">
+		<div class="form-group">
+			 <label class="col-sm-4 control-label">Email Address</label> 
+			 <div class="col-sm-6">
+			 	 <input class="form-control input-md" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" name="email" id="email" type="email" required> 
+			 </div>
+		</div>
+	
+</div>
+					
+	<div class="row">
+<div class="form-group">
+			 <label class=" col-sm-4 control-label">Password</label> <div class="col-sm-6">
+			 	
+			 <input class="form-control input-md" name="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{4,}" id="password" type="password" title="Must contain at least one number and one uppercase and lowercase letter, and at least 4 or more characters" required>
+			 <h6>[password must be at least 1 number one uppercase and at least 4 characters ]</h6>
+			 </div>
+		</div>
+	
+</div>
+<div class="checkbox">
+						<label for="Preferences-1">
+						  <input name="checkbox" id="Preferences-1" checked="checked" type="checkbox">
+					I would like landlords to contact me with move-in specials & lease incentives.
+						</label>
+						</div>
+
+</fieldset>
+						
+						
+	
+				
+					
+					
+				   
+					  
+						<div class="two-type">
+						<div class="form-group">
+						  <div class="col-md-12 text-center">
+						  <p class="text-center">By clicking "Sign Up", you agree to our<a href="">Terms of Use.</a></p>
+						   
+							<button type="submit5" class="btn btn-theme btn-prop" data-loading-text="<i class='fa fa-spinner fa-spin '></i> Sending..">signup</button>
+						  </div>
+						<p class="text-center nomargin">Already have an account? <a href="login.php">Sign In Here</a></p>
+						 </div>
+						
+					</div>
+				</div>
+				<div class="col-sm-3">
+					<fieldset>
+						<legend>
+							<strong>Image</strong>
+						</legend>
+						<div class="form-group">
+			<div class="av-img12">
+				<img id="blah" src="#"  />
+				<div class="fffile">
+					<input name="tenent_image" accept="image/*" type="file" onchange="readURL(this);" />
+					<label>
+						<i class="fa fa-upload" style="margin-right: 5px;"></i>
+						Images
+					</label>
+				</div>
+				 
+			</div>
+
+		</div>
+					</fieldset>
+				</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<script type="text/javascript">
+	// preview  image before and after upload
+function readURL(input) {
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+
+                reader.onload = function (e) {
+                    $('#blah')
+                        .attr('src', e.target.result)
+                        .width(150)
+                        .height(200);
+                };
+
+                reader.readAsDataURL(input.files[0]);
+            }
+        }	
+	
+//	preview  image before and after upload
+
+// Phone number checking for 10 digits 
+//$(window).load(function()
+//{
+ //  var phones = [{ "mask": "(###) ###-####"}, { "mask": "(###) ###-##############"}];
+ //   $('#phone_number').inputmask({ 
+ //       mask: phones, 
+ //       greedy: false, 
+  //      definitions: { '#': { validator: "[0-9]", cardinality: 1}} });
+				
+//});
+//Phone number checking for 10 digits 
+
+$(function(){
+      
+  $('#number').keyup(function(e) {
+        if(this.value!='-')
+          while(isNaN(this.value))
+            this.value = this.value.split('').reverse().join('').replace(/[\D]/i,'')
+                                   .split('').reverse().join('');
+    })
+    .on("cut copy paste",function(e){
+    	e.preventDefault();
+    });
+
+});
+
+$(function(){
+      
+  $('#numaric').keyup(function(e) {
+        if(this.value!='-')
+          while(isNaN(this.value))
+            this.value = this.value.split('').reverse().join('').replace(/[\D]/i,'')
+                                   .split('').reverse().join('');
+    })
+    .on("cut copy paste",function(e){
+    	e.preventDefault();
+    });
+
+});
+
+$(function(){
+      
+  $('#phone_number').keyup(function(e) {
+        if(this.value!='-')
+          while(isNaN(this.value))
+            this.value = this.value.split('').reverse().join('').replace(/[\D]/i,'')
+                                   .split('').reverse().join('');
+    })
+    .on("cut copy paste",function(e){
+    	e.preventDefault();
+    });
+
+});
+
+// click checkbox to disabled input value
+$(function () {
+    $('.ba').on('change', function () {
+        var checked = $(this).prop('checked');
+        $('#move_date').prop('disabled', checked);
+    });
+	
+
+});
+//click checkbox to disabled input value
+
+
+$(function (){
+    $('#inputs').change(function(){
+	  $('#tenent').empty()
+	  
+        for(i=0; i <$(this).val(); i++)
+        {
+            $('#tenent').append('<div class="row"><div class="col-sm-4"><div class="form-group"><label class="control-label">Tenent Name</label><input class="form-control input-md" name="tenent_name[]" id="tenent_name" type="text" required></div></div><div class="col-sm-4"><div class="form-group"> <label class="control-label" required>Sex:</label> <label class="radio-inline" for="Needs-0"> <input name="sex'+i+'" value="male" type="radio" checked>Male</label> <label class="radio-inline" for="Needs-1"> <input name="sex'+i+'" value="female" type="radio">female</label></div></div><div class="col-sm-4"><div class="form-group"><label class="" for="radios">Year of birth</label> <input value="" placeholder="year" maxlength="4" name="year_of_birth[]" onfocusout="isYearofBirthValid()" min="1965" max="2018" class="form-control" id="year_of_birth" type="text" required></div></div></div>');
+        }
+    });
+});
+
+$(function (){
+    $('#rental_history').change(function(){
+	   $('#rentel').empty()
+        for(i=0; i < $(this).val(); i++)
+        { 
+	        //alert(i);
+	       	if(i==0 ){		
+            $('#rentel').append('<div class="row"><div class="col-sm-4"><div class="form-group"><label class=" control-label">Address</label><input class="form-control input-md" name="tenent_address[]" id="tenent_address" type="text" required></div></div><div class="col-sm-4"><div class="form-group"> <label class=" control-label">Form:</label> <input class="form-control input-md" name="form[]" type="date" required></div></div><div class="col-sm-4"><div class="form-group"> <label class=" control-label">To:</label> <input class="form-control input-md" id="todate" name="todate[]" type="date" required></div> <div class="checkbox"> <label for="checkbox-1"> <input name="present[]" id="present" id="checkbox-1" value="yes" type="checkbox" required>Is Present here</label> </div></div></div><div class="row"><div class="col-sm-6"><div class="form-group"><label class="control-label">How Much:</label><input class="form-control input-md" name="How_much[]" id="how_much1" type="text" maxlength="10" required> </div></div><div class="col-sm-6"><div class="form-group"><label class="control-label">reasion For moving:</label><input class="form-control input-md" name="reasion_for_moving[]" type="text" required> </div></div></div>');
+			}else{
+			 $('#rentel').append('<hr> <div class="row"><div class="col-sm-4"><div class="form-group"><label class="control-label">Address</label><input class="form-control input-md" name="tenent_address[]" id="tenent_address" type="text" required></div></div><div class="col-sm-4"><div class="form-group"> <label class="control-label">Form:</label> <input class="form-control input-md" name="form[]" type="date" required></div></div><div class="col-sm-4"><div class="form-group"> <label class="control-label">To:</label> <input class="form-control input-md" id="todate" name="todate[]" type="date" required></div></div></div><div class="row"><div class="col-sm-6"><div class="form-group"><label class="control-label">How Much:</label> <input class="form-control input-md" id="how_much'+i+'" name="How_much[]" maxlength="10" type="text" required> </div></div><div class="col-sm-6"><div class="form-group"><label class="control-label">reasion For moving:</label> <input class="form-control input-md" name="reasion_for_moving[]" type="text" required></div></div></div>');
+			
+			}
+			
+			 $('#present').on('change', function () {
+				
+              var checked = $(this).prop('checked');
+               $('#todate').prop('disabled', checked);
+            });
+			
+      
+          $('#how_much'+i+'').keyup(function(e) {
+           if(this.value!='-')
+          while(isNaN(this.value))
+            this.value = this.value.split('').reverse().join('').replace(/[\D]/i,'')
+                                   .split('').reverse().join('');
+         })
+        .on("cut copy paste",function(e){
+    	  e.preventDefault();
+    });
+        $('#how_much1').keyup(function(e) {
+           if(this.value!='-')
+          while(isNaN(this.value))
+            this.value = this.value.split('').reverse().join('').replace(/[\D]/i,'')
+                                   .split('').reverse().join('');
+         })
+        .on("cut copy paste",function(e){
+    	  e.preventDefault();
+    });
+
+        }
+    });
+});
+
+	</script>	
+<script>
+function getcity(val) {
+
+	$.ajax({
+	type: "POST",
+	url: "process/process.php?action=getcity",
+	data:'State='+val,
+	success: function(data){
+		$("#city-list").html(data);
+	}
+	});
+} 
+	</script>
+	<script>
+
+function isYearofBirthValid(){
+	var x = document.getElementById("year_of_birth");
+	//alert(x.value);
+    if(x.value < 1898 || x.value > 2018){
+        alert("invalid year! Please enter valid year");
+		x.value = '';
+        return false;
+    }
+    return true;
+}
+	</script>
+	
+<?php include 'include/footer.php' ?>
